@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+}
+
+.content {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 40px 320px calc(100vw - 360px);
+}
+
+.hotbar {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: rgb(127 127 127 / 0.15);
+}
+
+.hotbar>* {
+    width: 100%;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.hotbar>*:hover {
+    background-color: rgb(127 127 127 / 0.1);
+}
+
+.list {
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+    padding: 8px;
+    background-color: rgb(127 127 127 / 0.05);
+}
+
+.list>* {
+    margin-top: 8px;
+    height: 64px;
+    border-radius: 8px;
+    background-color: rgb(127 127 127 / 0.1);
+    box-sizing: border-box;
+    padding: 8px;
+    font-family: consolas, 'ubuntu mono';
+    position: relative;
+}
+
+.list>*:first-child {
+    margin-top: 0;
+}
+
+.list>*>* {
+    line-height: 24px;
+}
+
+.status {
+    font-size: 16px;
+    color: gray;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.status> :first-child {
+    font-size: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.task.active::after {
+    content: '';
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    top: 28px;
+    right: 8px;
+    background-color: red;
+}
+
+pre {
+    font-family: consolas, 'ubuntu mono';
+    margin: 0;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.main-title {
+    font-weight: bolder;
+    height: 40px;
+    line-height: 24px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(127 127 127 / 0.1);
+}
+
+.action-bar {
+    display: flex;
+    height: 100%;
+}
+
+.action-bar>* {
+    display: inline-block;
+    height: 100%;
+    aspect-ratio: 1;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.action-bar>*:hover {
+    background-color: rgb(127 127 127 / 0.1);
+}
+
+.main-body {
+    width: 100%;
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+
+.subtitle {
+    font-weight: bolder;
+    color: gray;
+    margin-top: 16px;
+}
+
+.setting-page {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.setting-page>div {
+    background-color: white;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40px calc(100vw - 40px);
+}
+
+.setting-page .hotbar {
+    flex-direction: column;
+}
+
+.setting-page>div>div:last-child {
+    margin: 0 8px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.setting-title {
+    margin: 16px 0;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.setting-subtitle {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.setting-page input {
+    outline: unset;
+    border: 1px solid rgb(127 127 127 / 0.2);
+    font-size: 16px;
+    height: 20px;
+    width: 100%;
+    padding-right: 24px;
+}
+
+.setting-input {
+    position: relative;
+    max-width: 480px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.setting-input::after {
+    font-family: "tabler-icons" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    top: 4px;
+    right: -20px;
+}
+
+.setting-file::after {
+    content: '\faf7';
+}

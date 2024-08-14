@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>cron-alert</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./icon/tabler-icons.min.css" />
+</head>
+
+<body>
+    <template id="template">
+        <div class="task">
+            <div></div>
+            <div class="status"><span class="ti" data-name="" data-status=""></span><span>disabled</span></div>
+        </div>
+    </template>
+    <div class="content">
+        <div class="hotbar">
+            <!-- <div  id="setting" title="settings">
+                <span class="ti ti-settings"></span>
+            </div> -->
+            <div id="reload" title="reload config">
+                <span class="ti ti-reload"></span>
+            </div>
+            <div id="open-config" title="open config folder">
+                <span class="ti ti-folder-open"></span>
+            </div>
+        </div>
+        <div class="list"></div>
+        <div class="main">
+            <div class="main-title">
+                <div class="main-title-text"></div>
+                <div class="action-bar">
+                    <span id="open-result" class="ti ti-folder-open" title="open result folder"></span>
+                </div>
+            </div>
+            <div class="main-body"></div>
+        </div>
+    </div>
+    <div class="setting-page">
+        <div>
+            <div class="hotbar">
+                <div  id="return" title="return">
+                    <span class="ti ti-arrow-back-up"></span>
+                </div>
+            </div>
+            <div>
+                <div class="setting-title">settings</div>
+                <div class="setting-subtitle">task config folder</div>
+                <div class="setting-input setting-file">
+                    <input>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
